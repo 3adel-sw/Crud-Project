@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fills Font Awesome  -->
+    <link rel="stylesheet" href="asset/css/all.css" />
+    <link rel="stylesheet" href="asset/css/all.min.css" />
+    <!-- Fills Bootstrap  -->
+    <link rel="stylesheet" href="vendor/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="vendor/css/bootstrap.min.css.map" />
+    <!-- Fills Fonts Google  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Inspiration&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Fills Normalize  -->
+    <link rel="stylesheet" href="asset/css/Normalize.css" />
+    <!-- Fills Css  -->
+    <link rel="stylesheet" href="asset/css/styles.css" />
+    <title>Wibsite Cruds</title>
+  </head>
+  <body>
+    <div class="crud">
+      <div class="head">
+        <h2>crud</h2>
+        <p>PRODUCT MANAGEMENT SYSTEM</p>
+      </div>
+      <div class="inputs">
+        <input type="text" placeholder="Title" id="title" />
+        <div class="price">
+          <input type="number" id="price" placeholder="Price" />
+          <input type="number" id="taxes" placeholder="Taxes" />
+          <input type="number" id="ads" placeholder="Ads" />
+          <input type="number" id="discount" placeholder="Discount" />
+          <small id="total">123</small>
+        </div>
+        <input type="number" id="count" placeholder="Count" />
+        <input type="text" id="category" placeholder="Category" />
+        <button id="submit" class="m-1">Create</button>
+      </div>
+      <div class="output">
+        <div class="searchBlock">
+          <input type="text" id="search" placeholder="Search" />
+          <div class="btnSearch"></div>
+          <div class="w-100 d-flex justify-content-center align-items-center">
+            <button id="searchTitle">Search By Title</button>
+            <button id="searchCategory" class="btnCategory m-3">
+              Search By Category
+            </button>
+          </div>
+          <!-- <button id="delete" class="btnDelete m-2">Delete All</button> -->
+        </div>
+        <table>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Taxes</th>
+            <th>Ads</th>
+            <th>Discount</th>
+            <th>Total</th>
+            <th>Category</th>
+            <th>Update</th>
+            <th>Delete</th>
+          </tr>
+          <tbody id="tbody">
+            <td>1</td>
+            <td>Samsung</td>
+            <td>2000</td>
+            <td>100</td>
+            <td>50</td>
+            <td>50</td>
+            <td>11120</td>
+            <td>Mobile</td>
+            <td><button class="btnUpdate">Update</button></td>
+            <td><button class="btnDelete">Delete</button></td>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Fills Js -->
+    <script src="asset/js/script.js"></script>
+    <!-- Fills Jquery  -->
+    <script src="asset/js/jquery-3.7.1.min.js"></script>
+  </body>
+</html>
