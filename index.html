@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="asset/css/Normalize.css" />
     <!-- Fills Css  -->
     <link rel="stylesheet" href="asset/css/styles.css" />
+    <!-- Responsive Css  -->
+    <link rel="stylesheet" href="asset/css/responsive.css" />
     <title>Wibsite Cruds</title>
   </head>
   <body>
@@ -31,11 +33,31 @@
       <div class="inputs">
         <input type="text" placeholder="Title" id="title" />
         <div class="price">
-          <input type="number" id="price" placeholder="Price" />
-          <input type="number" id="taxes" placeholder="Taxes" />
-          <input type="number" id="ads" placeholder="Ads" />
-          <input type="number" id="discount" placeholder="Discount" />
-          <small id="total">123</small>
+          <input
+            onkeyup="getTotal()"
+            type="number"
+            id="price"
+            placeholder="Price"
+          />
+          <input
+            onkeyup="getTotal()"
+            type="number"
+            id="taxes"
+            placeholder="Taxes"
+          />
+          <input
+            onkeyup="getTotal()"
+            type="number"
+            id="ads"
+            placeholder="Ads"
+          />
+          <input
+            onkeyup="getTotal()"
+            type="number"
+            id="discount"
+            placeholder="Discount"
+          />
+          <small id="total"></small>
         </div>
         <input type="number" id="count" placeholder="Count" />
         <input type="text" id="category" placeholder="Category" />
@@ -43,17 +65,28 @@
       </div>
       <div class="output">
         <div class="searchBlock">
-          <input type="text" id="search" placeholder="Search" />
+          <input
+            onkeyup="searchData(this.value)"
+            type="text"
+            id="search"
+            placeholder="Search"
+          />
           <div class="btnSearch"></div>
           <div class="w-100 d-flex justify-content-center align-items-center">
-            <button id="searchTitle">Search By Title</button>
-            <button id="searchCategory" class="btnCategory m-3">
+            <button onclick="getSearchMood(this.id)" id="searchTitle">
+              Search By Title
+            </button>
+            <button
+              onclick="getSearchMood(this.id)"
+              id="searchCategory"
+              class="btnCategory m-3"
+            >
               Search By Category
             </button>
           </div>
-          <!-- <button id="delete" class="btnDelete m-2">Delete All</button> -->
+          <div id="deleteAll" class="m-1"></div>
         </div>
-        <table>
+        <table class="table table-dark table-hover" id="table">
           <tr>
             <th>ID</th>
             <th>Title</th>
@@ -61,23 +94,13 @@
             <th>Taxes</th>
             <th>Ads</th>
             <th>Discount</th>
-            <th>Total</th>
+            <!-- <th>Count</th> -->
             <th>Category</th>
+            <th>Total</th>
             <th>Update</th>
             <th>Delete</th>
           </tr>
-          <tbody id="tbody">
-            <td>1</td>
-            <td>Samsung</td>
-            <td>2000</td>
-            <td>100</td>
-            <td>50</td>
-            <td>50</td>
-            <td>11120</td>
-            <td>Mobile</td>
-            <td><button class="btnUpdate">Update</button></td>
-            <td><button class="btnDelete">Delete</button></td>
-          </tbody>
+          <tbody id="tbody"></tbody>
         </table>
       </div>
     </div>

@@ -1,0 +1,16 @@
+@media (max-width: 368px) {
+  .crud {
+    width: 100%;
+  }
+}
+@media (max-width: 368px) {
+  .price input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 368px) {
+  table {
+    width: 100%;
+  }
+}
