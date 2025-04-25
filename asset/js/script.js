@@ -202,6 +202,17 @@ function searchData(value) {
   document.getElementById("tbody").innerHTML = table;
 }
 // Clean data
+function cleanData() {
+  title.value = "";
+  price.value = "";
+  taxes.value = "";
+  ads.value = "";
+  discount.value = "";
+  total.innerHTML = "";
+  total.style.background = "#a00d02";
+  count.value = "";
+  category.value = "";
+}
 
 // Delete Data All
 function deleteAllData() {

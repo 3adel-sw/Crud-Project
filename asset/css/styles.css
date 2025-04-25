@@ -26,7 +26,6 @@ a {
 }
 
 .crud {
-  width: 80%;
   margin: auto;
 }
 
@@ -101,3 +100,5 @@ td {
 tr:nth-child(even) {
   background-color: #111;
 }
+
+
