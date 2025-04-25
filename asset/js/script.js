@@ -48,20 +48,32 @@ submit.onclick = function () {
     count: count.value,
     category: category.value,
   };
-
-  if (mood === "create") {
-    if (newPro.count > 1) {
-      for (let i = 0; i < newPro.count; i++) {
+  if (
+    title.value != "" &&
+    price.value != "" &&
+    category.value != "" &&
+    newPro.count < 1000 &&
+    newPro.count > 0 &&
+    newPro.price > 0 &&
+    newPro.taxes >= 0 &&
+    newPro.ads >= 0 &&
+    newPro.discount >= 0
+  ) {
+    if (mood === "create") {
+      if (newPro.count > 1) {
+        for (let i = 0; i < newPro.count; i++) {
+          dataPro.push(newPro);
+        }
+      } else {
         dataPro.push(newPro);
       }
     } else {
-      dataPro.push(newPro);
+      dataPro[tmp] = newPro; // Update Product
+      mood = "create"; // Reset Mood to Create
+      submit.innerHTML = "Create"; // Reset Submit Button Text
+      count.style.display = "block"; // Show Count Input
     }
-  } else {
-    dataPro[tmp] = newPro; // Update Product
-    mood = "create"; // Reset Mood to Create
-    submit.innerHTML = "Create"; // Reset Submit Button Text
-    count.style.display = "block"; // Show Count Input
+    clearData();
   }
 
   // save Local Storage
@@ -70,7 +82,6 @@ submit.onclick = function () {
   showData();
   //
   // Clear Inputs
-  clearData();
 };
 
 // Create Inputs
@@ -201,7 +212,7 @@ function searchData(value) {
   }
   document.getElementById("tbody").innerHTML = table;
 }
-// Clean data
+
 function cleanData() {
   title.value = "";
   price.value = "";
@@ -224,3 +235,5 @@ function deleteAllData() {
     showData();
   }
 }
+
+// Clean data
